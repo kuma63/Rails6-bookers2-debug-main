@@ -5,8 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    @user.id == current_user.id
-    user_path(@user.id)
+    user_path(resource)
   end
 
   def after_sign_out_path_for(resource)
