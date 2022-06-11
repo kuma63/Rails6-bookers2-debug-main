@@ -27,5 +27,10 @@ class Book < ApplicationRecord
     else
       @book = Book.all
     end
+    
+  end
+  
+  def self.search(search_word)
+    Book.where(['category LIKE ?', "#{search_word}"])
   end
 end
